@@ -132,7 +132,7 @@ ELSE
 		SET @email_body = N'We couldn''t get a list of databases with problems. Better check on this server manually.';
 	END
 
-
+WAITFOR DELAY '00:02:00'
 EXEC msdb.dbo.sp_send_dbmail  
     @profile_name = @DatabaseMailProfileName,  
     @recipients = @Recipients,  
